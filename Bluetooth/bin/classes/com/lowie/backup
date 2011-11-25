@@ -1,0 +1,30 @@
+ /*mBluetoothAdapter.startDiscovery();
+     // Create a BroadcastReceiver for ACTION_FOUND
+        final BroadcastReceiver mReceiver = new BroadcastReceiver() {   
+        	EditText text = (EditText) findViewById(R.id.editText1);
+        	ArrayList<String> result = new ArrayList<String>();
+        	
+        	public void onReceive(Context context, Intent intent) { 
+        		int indicator = 0;
+        		String action = intent.getAction();   
+        		// When discovery finds a device        
+        		if (BluetoothDevice.ACTION_FOUND.equals(action)) {            
+        			// Get the BluetoothDevice object from the Intent            
+        			BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);            
+        			// Add the name and address to an array adapter to show in a ListView   
+        			/*for(int i = 0; i < result.size(); i++){
+        				if(device.getAddress().equals(result.get(i))){
+        					indicator = 1;
+        				}
+        			}*/
+        				/*if(indicator  == 0){*/
+        					result.add(device.getAddress());
+        					text.append("Name: "+device.getName() + "\nMAC : " + device.getAddress()+"\n"); 
+        				//}  			  
+        			}    
+        		}
+        	};
+        			// Register the BroadcastReceiver
+        			IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        			registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy
+    }*/
